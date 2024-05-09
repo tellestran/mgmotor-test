@@ -314,11 +314,11 @@ a.jumbotron__nav-link .btn span {
   display: flex;
   grid-template-columns: 4fr 6fr;
   padding: 3rem 5%;
-  justify-content: space-between;
 }
 
 .price__element-param {
   font-family: var(--mont);
+  width: 50%;
 }
 
 .price__element-param a {
@@ -356,7 +356,7 @@ a.jumbotron__nav-link .btn span {
 }
 
 .price__element-img {
-  width: 50%;
+  width: 60%;
 }
 
 .price__element-img img {
