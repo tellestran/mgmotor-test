@@ -4,26 +4,9 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    * {
-      box-sizing: border-box
-    }
-
-    body {
-      font-family: Verdana, sans-serif;
-      margin: 0
-    }
-
-    .jumbotron__slideshow-side {
-      display: none;
-    }
-
-    .jumbotron__slideshow-side img {
-      vertical-align: middle;
-    }
-
     /* Slideshow container */
-    .jumbotron__slideshow {
-      max-width: 1000px;
+    .jumbotron__slide-show {
+      max-width: 100%;
       position: relative;
       margin: auto;
     }
@@ -100,20 +83,6 @@
       animation-duration: 1.5s;
     }
 
-    .jumbotron__slideshow-side img {
-      width: 100%;
-      height: 80vh;
-      object-fit: cover;
-      /* Adjust the height as needed */
-    }
-
-    .jumbotron__change {
-      position: absolute;
-      top: 0;
-      right: 50%;
-    }
-
-
     @keyframes fade {
       from {
         opacity: .4
@@ -137,35 +106,30 @@
 </head>
 
 <body>
-  <div class="jumbotron">
-    <div class="jumbotron__nav"></div>
-    <div class="jumbotron__slideshow">
-      <div class="jumbotron__slideshow-side fade">
-        <img src="./assets/mghs-jumbotron.webp" style="width:100%">
-        <div class="text">Caption Text</div>
-      </div>
 
-      <div class="jumbotron__slideshow-side fade">
-        <img src="./assets/mgrx5-jumbotron.webp" style="width:100%">
-        <div class="text">Caption Two</div>
-      </div>
-
-      <div class="jumbotron__slideshow-side fade">
-        <img src="./assets/mgzs-jumbotron.jpeg" style="width:100%">
-        <div class="text">Caption Three</div>
-      </div>
-
-      <div class="jumbotron__change" style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-
-
-      <a class="prev" onclick="plusSlides(-1)">❮</a>
-      <a class="next" onclick="plusSlides(1)">❯</a>
-
+  <div class="jumbotron__slide-show">
+    <div class="jumbotron__slide-element fade">
+      <img src="./assets/mghs-jumbotron.webp" style="width:100%">
     </div>
+
+    <div class="jumbotron__slide-element fade">
+      <img src="./assets/mgrx5-jumbotron.webp" style="width:100%">
+    </div>
+
+    <div class="jumbotron__slide-element fade">
+      <img src="./assets/mgzs-jumbotron.jpeg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
   </div>
 
   <script>
@@ -182,7 +146,7 @@
 
     function showSlides(n) {
       let i;
-      let slides = document.getElementsByClassName("jumbotron__slideshow-side");
+      let slides = document.getElementsByClassName("jumbotron__slide-element");
       let dots = document.getElementsByClassName("dot");
       if (n > slides.length) { slideIndex = 1 }
       if (n < 1) { slideIndex = slides.length }

@@ -15,6 +15,7 @@
 
 body {
   font-size: 10px;
+  margin: 0;
 }
 
 .btn {
@@ -34,7 +35,6 @@ body {
   overflow: hidden;
   transition-duration: 0.3s;
   font-weight: 600;
-  border-radius: 30% 0 30% 0;
 }
 
 .btn::before {
@@ -117,16 +117,21 @@ body {
   padding-top: 0.4rem;
 }
 
+nav {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+}
 .nav {
   display: flex;
   justify-content: space-between;
   font-size: 1.2rem;
   font-family: var(--mont);
   font-weight: 700;
-  padding: 1rem 1.5rem 1rem 0rem;
   align-items: center;
   background-color: var(--red);
   color: var(--white);
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
 }
 .nav .nav__logo {
   max-width: 30%;
@@ -159,4 +164,225 @@ button span {
   font-size: 1.2rem;
 }
 
+.jumbotron {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  height: 100vh;
+  padding-top: 15vh;
+}
 
+.jumbotron__nav {
+  background-image: url("./assets/background-banner-jumps.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.jumbotron__title {
+  font-family: var(--bebas);
+  font-size: 3rem;
+  color: white;
+}
+
+.jumbotron__nav-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+a.jumbotron__nav-link {
+  display: flex;
+  width: 80%;
+  margin: 0.5rem auto;
+  text-decoration: none;
+}
+
+a.jumbotron__nav-link .btn {
+  width: 100%;
+}
+
+a.jumbotron__nav-link .btn:hover {
+  background-color: white;
+  color: black;
+}
+
+a.jumbotron__nav-link .btn span {
+  font-family: var(--bai);
+  font-weight: 700;
+}
+
+/* Slideshow container */
+.jumbotron__slide-show {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.jumbotron__slide-element {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.jumbotron__slide-element img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  height: 100%;
+  padding: 0 2rem;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.price__element {
+  display: flex;
+  grid-template-columns: 4fr 6fr;
+  padding: 3rem 5%;
+}
+
+.price__element-param {
+  font-family: var(--mont);
+}
+
+.price__element-param a {
+  color: var(--red);
+  text-decoration: none;
+  margin: 1rem 0;
+}
+.price__element-param a h2 {
+  font-size: 2.3rem;
+  margin: 1rem 0;
+}
+
+.price__element-param h3 {
+  /* font-family: var(--inter); */
+  font-size: 1.6rem;
+  font-style: italic;
+  margin: 1rem 0;
+  border-top: 3px solid var(--red);
+  max-width: 70%;
+}
+
+.price__element-param h3 span {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--red);
+}
+
+.price__element-param p {
+  font-size: 1rem;
+}
+
+.price__element-param p span {
+  font-weight: 700;
+  color: var(--red);
+}
+
+.price__element-img {
+  width: 60%;
+}
+
+.price__element-img img {
+  max-width: 100%;
+}
+
+.element2,
+.element4 {
+  flex-direction: row-reverse;
+  padding-left: 0;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+}
