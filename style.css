@@ -1,0 +1,162 @@
+:root {
+  --red: #d6272b;
+  --black: #000000;
+  --white: #ffffff;
+  --ubuntu: "Ubuntu Sans Mono", monospace;
+  --inter: "Inter", sans-serif;
+  --bebas: "Bebas Neue", sans-serif;
+  --mont: "Montserrat", sans-serif;
+  --bai: "Bai Jamjuree", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 10px;
+}
+
+.btn {
+  width: 13rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 15);
+  border: none;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  font-weight: 600;
+  border-radius: 30% 0 30% 0;
+}
+
+.btn::before {
+  width: 13rem;
+  height: 8rem;
+  position: absolute;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  left: -100%;
+  top: 0;
+  transition-duration: 0.3s;
+  mix-blend-mode: difference;
+}
+
+.btn:hover::before {
+  transition-duration: 0.3s;
+  transform: translate(100%, -50%);
+  border-radius: 0;
+}
+
+.btn:active {
+  transform: translate(5px, 5px);
+  transition-duration: 0.3s;
+}
+
+.subnav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.8rem;
+  font-family: var(--mont);
+  font-weight: 700;
+  padding: 0.5rem 1.5rem 0.5rem 2rem;
+  align-items: center;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.subnav__branch {
+  font-family: var(--bai);
+}
+.subnav__contact {
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  align-items: center;
+  color: var(--white);
+}
+.subnav__contact a {
+  text-decoration: none;
+  color: black;
+  color: var(--white);
+}
+
+.subnav__contact a:hover {
+  text-decoration: underline;
+}
+
+.subnav__contact a i {
+  margin-right: 1rem;
+  font-size: 1.8rem;
+}
+.subnav__phone {
+}
+.subnav__messenger {
+}
+
+.subnav__zalo {
+}
+
+.subnav__img a {
+  display: flex;
+  align-items: center;
+}
+
+.subnav__zalo img {
+  width: 2rem;
+  padding-top: 0.4rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-family: var(--mont);
+  font-weight: 700;
+  padding: 1rem 1.5rem 1rem 0rem;
+  align-items: center;
+  background-color: var(--red);
+  color: var(--white);
+}
+.nav .nav__logo {
+  max-width: 30%;
+  height: auto;
+  align-items: center;
+}
+
+.nav .nav__logo img {
+  max-width: 100%;
+}
+
+.nav__content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav__content a {
+  text-decoration: none;
+  color: var(--white);
+  font-family: var(--bai);
+}
+
+.nav__content a:hover {
+  display: inline-block;
+  text-decoration: underline;
+}
+
+button span {
+  font-size: 1.2rem;
+}
+
+
