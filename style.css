@@ -314,6 +314,7 @@ a.jumbotron__nav-link .btn span {
   display: flex;
   grid-template-columns: 4fr 6fr;
   padding: 3rem 5%;
+  justify-content: space-between;
 }
 
 .price__element-param {
@@ -355,18 +356,18 @@ a.jumbotron__nav-link .btn span {
 }
 
 .price__element-img {
-  width: 60%;
+  width: 50%;
 }
 
 .price__element-img img {
   max-width: 100%;
 }
 
-.element2,
+/* .element2,
 .element4 {
   flex-direction: row-reverse;
   padding-left: 0;
-}
+} */
 
 @keyframes fade {
   from {
