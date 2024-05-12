@@ -166,7 +166,7 @@ nav {
 }
 
 .nav__product {
-  display: flex;
+  display: none;
   background-color: var(--white);
   position: fixed;
   right: 0;
@@ -175,6 +175,8 @@ nav {
   align-items: center;
   z-index: 100;
   /* top: 16vh; */
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .nav__product-element {
@@ -968,5 +970,155 @@ form .btn {
   .next,
   .text {
     font-size: 11px;
+  }
+}
+
+.price-mobile,
+.nav__mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 1076px) {
+  .nav {
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+  }
+
+  .price__element-param a {
+    max-width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .jumbotron__title {
+    text-align: center;
+  }
+
+  .jumbotron {
+    display: flex;
+  }
+
+  .jumbotron__nav {
+    display: none;
+  }
+
+  .price {
+    width: 100%;
+  }
+
+  .showroom-list__list a {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 920px) {
+  .jumbotron {
+    padding: 0;
+  }
+  .subnav,
+  .nav__content,
+  .nav__product {
+    display: none;
+  }
+
+  .nav {
+    padding: 0;
+    width: 100%;
+  }
+
+  .nav button {
+    padding: 1rem;
+    margin: 0;
+    height: 100%;
+    font-size: 2rem;
+    background-color: var(--red);
+    border: none;
+    color: var(--white);
+  }
+
+  .nav a {
+    color: var(--white);
+    text-decoration: none;
+    margin-right: 3rem;
+  }
+
+  .nav a i {
+    margin-right: 0.5rem;
+  }
+
+  .nav__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .price {
+    display: none;
+  }
+
+  .price-mobile {
+    display: block;
+    max-width: 100%;
+  }
+
+  .price-mobile img {
+    max-width: 100%;
+  }
+
+  .price__mobile-element {
+    border-bottom: 5px solid var(--red);
+  }
+
+  .price__mobile-element img {
+    width: 100%;
+    transform: scale(1);
+    margin: 1rem 0 0rem 5rem;
+  }
+
+  table {
+    color: white;
+    font-family: var(--bai);
+    margin: 0 auto;
+  }
+
+  .price__mobile-element button {
+    background-color: var(--white);
+    color: var(--black);
+    margin: 1rem auto;
+  }
+
+  .even-element {
+    background-color: var(--white);
+    color: var(--black);
+  }
+
+  .even-element table td {
+    color: var(--black);
+  }
+  .mghs {
+    width: 100%;
+  }
+
+  .mgrx5 img {
+    max-width: 100%;
+    transform: scale(0.8);
+  }
+
+  .mghs img {
+    margin: 2rem 3rem 2rem 5rem;
+    width: 80%;
+    transform: scale(1);
+  }
+
+  .mgnewmg5 img {
+    margin: 0;
+    transform: scale(0.8);
+  }
+
+  .mg5 img {
+    margin: 0;
+  }
+
+  .mgzs img {
+    margin: 0;
   }
 }
