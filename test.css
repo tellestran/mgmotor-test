@@ -1,98 +1,42 @@
-:root {
-  --red: #d6272b;
-  --black: #000000;
-  --white: #ffffff;
-  --ubuntu: "Ubuntu Sans Mono", monospace;
-  --inter: "Inter", sans-serif;
-  --bebas: "Bebas Neue", sans-serif;
-  --mont: "Montserrat", sans-serif;
-  --bai: "Bai Jamjuree", sans-serif;
-}
-
-.price__element {
-  background-image: url("https://mgmotor.vn/wp-content/uploads/2023/09/RX5-Exterior-1-1.png");
-  background-position: center;
-  height: 80vh;
-  width: 100%;
-  color: white;
-}
-
-.price__element-param {
-  font-family: var(--mont);
-  width: 100%;
-  /* background-color: rgb(0, 0, 0, 0.1); */
-  /* height: 100%; */
-  padding: 2rem 2rem 0 0rem;
-}
-
-.price__element-param a {
-  display: block;
-  color: var(--white);
-  text-decoration: none;
-  background-image: url("https://mgmotor.vn/wp-content/themes/mg-motor/assets/img/bg_tt_product.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  max-width: 50%;
-}
-
-.price__element-param h2 {
-  display: block;
-  margin: 0 0 0 8rem;
-  font-size: 2.3rem;
-  color: black;
-}
-
-.price__element-param h3 {
-  display: block;
-  /* font-family: var(--inter); */
-  font-size: 1.6rem;
-  font-style: italic;
-  /* border-top: 3px solid var(--red); */
-  max-width: 70%;
-  margin: 0 0 0 8rem;
-  color: black;
-}
-
-a h3 span {
-  color: red;
-}
-
-.price__element-param a h3 span {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--red);
-}
-
-table {
-  border-collapse: collapse;
-  margin: 1rem 0 0 4rem;
-}
-
-td {
-  padding: 8px;
-  border: none;
-  font-size: 1rem;
-}
-
-td:first-child {
-  text-align: left;
-  font-weight: 700;
-  color: var(--white);
-}
-
-td:nth-child(2) {
-  text-align: center;
-  font-weight: 500;
-}
-
-td:last-child {
-  text-align: left;
-}
-
-tr:nth-child(even) {
-}
-
-.element1 {
+.nav__product {
+  display: none;
   background-color: var(--white);
-  color: var(--black);
+  position: fixed;
+  right: 0;
+  left: 0;
+  padding: 0 3rem;
+  align-items: center;
+  z-index: 20;
+}
+
+.nav__product-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  padding: 1.5rem 1.5rem;
+  cursor: pointer;
+  border: 3px solid var(--white);
+}
+
+.nav__product-element img {
+  max-width: 200px;
+  height: 100px;
+}
+
+.nav__product-element p {
+  font-family: var(--bai);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.nav__product-element:hover {
+  border: 3px solid var(--red);
+  transition: all 0.2s ease-in-out;
+}
+
+.nav__products-btn:hover + .nav__product { 
+  display: flex;
 }

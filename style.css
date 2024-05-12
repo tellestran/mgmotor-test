@@ -62,6 +62,10 @@ body {
   transition-duration: 0.3s;
 }
 
+.btn .nav__btn {
+  margin: 1rem 0;
+}
+
 .subnav {
   display: flex;
   justify-content: space-between;
@@ -160,6 +164,50 @@ nav {
   display: inline-block;
   text-decoration: underline;
 }
+
+.nav__product {
+  display: flex;
+  background-color: var(--white);
+  position: fixed;
+  right: 0;
+  left: 0;
+  padding: 0 3rem;
+  align-items: center;
+  z-index: 100;
+  /* top: 16vh; */
+}
+
+.nav__product-element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--red);
+  padding: 1.5rem 1.5rem;
+  cursor: pointer;
+  border: 3px solid var(--white);
+}
+
+.nav__product-element img {
+  max-width: 200px;
+  height: 100px;
+}
+
+.nav__product-element p {
+  font-family: var(--bai);
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.nav__product-element:hover {
+  border: 3px solid var(--red);
+  transition: all 0.2s ease-in-out;
+}
+
+/* .nav__products-btn:hover + .nav__product {
+  display: flex;
+} */
 
 button span {
   font-size: 1.2rem;
@@ -820,6 +868,52 @@ form .btn {
   font-weight: 600;
 } */
 
+.showroom-list {
+  background-color: var(--white);
+  color: var(--black);
+  padding: 2rem 2rem;
+  font-family: var(--mont);
+}
+
+.showroom-list h2 {
+  color: black;
+  font-size: 2.5rem;
+  margin: 1.5rem auto 1rem 0rem;
+}
+
+.showroom-list__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.showroom-list__list a {
+  display: inline-block;
+  width: 70%;
+  margin: 0.5rem auto;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 1rem 1rem;
+  border: 2px solid var(--black);
+  background-color: var(--black);
+  color: var(--white);
+  max-width: 80%;
+}
+
+.showroom-list__list a:hover {
+  background-color: var(--red);
+  color: var(--white);
+  transition: all 0.2s ease-in-out;
+  border: var(--red);
+}
+
+.showroom-list h3 {
+  font-size: 2rem;
+  margin: 1rem 0 1rem 0;
+  color: red;
+}
+
 .footer {
   background-color: var(--red);
   font-family: var(--bai);
@@ -827,14 +921,15 @@ form .btn {
   padding: 2rem 2rem;
   display: flex;
 }
-.footer__logo{ 
-    width: 50%;
-    display: flex;
-    justify-content: center;
+.footer__logo {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3rem;
 }
 
-.footer__logo img { 
-    width: 60%;
+.footer__logo img {
+  width: 60%;
 }
 
 .footer__text {
@@ -843,8 +938,8 @@ form .btn {
   gap: 1rem;
 }
 
-.footer__text h2 { 
-    font-size: 2rem;
+.footer__text h2 {
+  font-size: 2rem;
 }
 
 .footer a {
@@ -853,8 +948,8 @@ form .btn {
   font-size: 1.2rem;
 }
 
-.footer a i { 
-    margin-right: 0.5rem;
+.footer a i {
+  margin-right: 0.5rem;
 }
 
 @keyframes fade {
