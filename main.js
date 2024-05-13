@@ -81,57 +81,103 @@ navProduct.addEventListener("mouseleave", function () {
   }, 100); // 2000 milliseconds = 2 seconds
 });
 
-  var navMobile = document.getElementsByClassName("nav__content-mobile")[0];
-  var menuBtn = document.getElementById("menu-btn");
-  var exitBtn = document.getElementById("exit-btn");
+var navMobile = document.getElementsByClassName("nav__content-mobile")[0];
+var menuBtn = document.getElementById("menu-btn");
+var exitBtn = document.getElementById("exit-btn");
 
-  if (menuBtn && navMobile) {
-    menuBtn.addEventListener("click", function () {
-      console.log("menu");
-      navMobile.classList.add("open");
-    });
+if (menuBtn && navMobile) {
+  menuBtn.addEventListener("click", function () {
+    console.log("menu");
+    navMobile.classList.add("open");
+  });
+}
+
+if (exitBtn && navMobile) {
+  exitBtn.addEventListener("click", function () {
+    console.log("exit");
+    navMobile.classList.remove("open");
+  });
+
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("myBtn");
+  var closePopup = document.getElementsByClassName("close")[0];
+  var modalClose = document.getElementById("modal__forward");
+
+  function openModal() {
+    modal.style.display = "block";
   }
 
-  if (exitBtn && navMobile) {
-    exitBtn.addEventListener("click", function () {
-      console.log("exit");
-      navMobile.classList.remove("open");
-    });
+  closePopup.onclick = function () {
+    modal.style.display = "none";
+  };
 
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("myBtn");
-    var closePopup = document.getElementsByClassName("close")[0];
-    var modalClose = document.getElementById("modal__forward");
+  modalClose.onclick = function () {
+    modal.style.display = "none";
+  };
 
-    function openModal() {
-      modal.style.display = "block";
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
     }
+  };
 
-    closePopup.onclick = function () {
-      modal.style.display = "none";
-    };
+  var dropdownButtons = document.querySelectorAll(".dropbtn-mobile");
 
-    modalClose.onclick = function () {
-      modal.style.display = "none";
-    };
-
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
+  dropdownButtons.forEach(function (btn) {
+    btn.addEventListener("click", function (event) {
+      event.preventDefault(); // Stop the link from navigating
+      var dropdownContent = this.nextElementSibling; // Get the next sibling element which should be the dropdown content
+      if (dropdownContent) {
+        dropdownContent.classList.toggle("active-dropdown"); // Toggle the visibility
       }
-    };
-
-    var dropdownButtons = document.querySelectorAll(".dropbtn-mobile");
-
-    dropdownButtons.forEach(function (btn) {
-      btn.addEventListener("click", function (event) {
-        event.preventDefault(); // Stop the link from navigating
-        var dropdownContent = this.nextElementSibling; // Get the next sibling element which should be the dropdown content
-        if (dropdownContent) {
-          dropdownContent.classList.toggle("active-dropdown"); // Toggle the visibility
-        }
-      });
     });
-    setTimeout(openModal, 2000);
-  }
+  });
+  setTimeout(openModal, 2000);
+}
 
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent default anchor click behavior
+
+    const targetId = this.getAttribute("href"); // Get the target element id
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      const topOffset =
+        targetElement.getBoundingClientRect().top +
+        window.pageYOffset -
+        (document.querySelector("header").offsetHeight || 0); // Adjust this if there's a fixed header
+
+      // Scroll to the target element
+      window.scrollTo({
+        top: topOffset, // Position of the element from the top of the document minus header height
+        behavior: "smooth",
+      });
+    }
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent default anchor click behavior
+
+    const targetId = this.getAttribute("href"); // Get the target element id
+    const targetElement = document.querySelector(targetId);
+
+    if (targetElement) {
+      // Calculate the height of the fixed navigation and sub-navigation
+      const fixedOffset = window.innerHeight * 0.2; // 20vh equivalent in pixels
+
+      const topOffset =
+        targetElement.getBoundingClientRect().top +
+        window.pageYOffset -
+        fixedOffset;
+
+      // Scroll to the target element
+      window.scrollTo({
+        top: topOffset, // Adjusted position of the element from the top of the document
+        behavior: "smooth",
+      });
+    }
+  });
+});

@@ -175,7 +175,7 @@ nav {
   padding: 0 3rem;
   align-items: center;
   z-index: 100;
-  /* top: 16vh; */
+  top: 16vh;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -722,7 +722,7 @@ tr:nth-child(even) {
 #accordion {
   width: 50%;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 0 1rem;
 }
 .accordion {
   margin: 1rem 0;
@@ -765,6 +765,7 @@ tr:nth-child(even) {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   font-family: "Bai Jamjuree", sans-serif;
+  border-radius: 10px;
 }
 
 .accordion span {
@@ -795,8 +796,8 @@ tr:nth-child(even) {
 }
 
 .accordion__panel p {
-  font-size: 1.8rem;
-  margin: 0 0 0 2rem;
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.5rem 1rem;
   padding: 0 0 0 1.5rem;
   border-left: 1px solid black;
   line-height: 1.5;
@@ -1036,6 +1037,10 @@ form .btn {
     transition: left 0.3s ease-in-out;
   }
 
+  .showroom-list__list a {
+    width: 100%;
+  }
+
   #nav__mobile.open {
     left: 0; /* Move to screen */
   }
@@ -1232,7 +1237,7 @@ form .btn {
   }
 
   .mghs img {
-    margin: 2rem 3rem 2rem 5rem;
+    margin: 2rem 0rem 2rem 5rem;
     width: 80%;
     transform: scale(1);
   }
@@ -1260,12 +1265,34 @@ form .btn {
   #accordion {
     width: 100%;
   }
+
   form {
     width: 100%;
   }
 }
 
 @media only screen and (max-width: 780px) {
+  form {
+    padding: 1rem 0.5rem 1rem 1rem;
+  }
+
+  form input {
+    width: 100%;
+  }
+
+  form p {
+    font-size: 1rem;
+  }
+  #accordion {
+    padding: 0 1rem;
+  }
+  .accordion {
+    padding: 1.8rem 0.8rem;
+  }
+
+  .accordion span {
+    margin-right: 0.5rem;
+  }
   .showroom-list__list {
     display: flex;
     flex-direction: column;
@@ -1308,6 +1335,9 @@ form .btn {
 }
 
 @media only screen and (max-width: 500px) {
+  #nav__mobile {
+    padding: 30% 0 50% 10%;
+  }
   .car-price {
     font-size: 1.8rem;
   }
