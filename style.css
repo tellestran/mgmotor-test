@@ -1032,7 +1032,6 @@ form .btn {
     top: 0;
     width: 100%;
     padding: 10% 0 50% 10%;
-    justify-content: space-between;
     left: -100%; /* Start offscreen */
     transition: left 0.3s ease-in-out;
   }
@@ -1339,6 +1338,13 @@ form .btn {
 }
 
 @media only screen and (max-width: 400px) {
+  .nav__logo img {
+    transform: scale(1.5);
+    margin-left: 1rem;
+  }
+  .nav__mobile a {
+    display: none;
+  }
   .nav__content-mobile a {
     font-size: 2rem;
   }
