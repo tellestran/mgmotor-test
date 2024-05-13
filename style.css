@@ -968,6 +968,10 @@ form .btn {
   display: none;
 }
 
+#functional-footer { 
+  display: none;
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -1281,6 +1285,36 @@ form .btn {
   form {
     width: 100%;
   }
+
+  #functional-footer {
+    z-index: 30;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2rem;
+    background-color: var(--red);
+    border-top: 3px solid var(--white);
+  }
+
+  a.functional-footer__element {
+    color: #eee;
+  }
+
+  .functional-footer__element i {
+    font-size: 1.8rem;
+    background-color: var(--red);
+  }
+
+  .functional-footer__element img {
+    width: 2rem;
+  }
+
+  .footer { 
+    margin-bottom: 6.4rem;
+  }
 }
 
 @media only screen and (max-width: 780px) {
@@ -1450,7 +1484,7 @@ form .btn {
   position: fixed;
   right: 0;
   bottom: 0;
-  margin: 0 2rem 4rem 0;
+  margin: 0 2rem 10rem 0;
   padding: 0;
   display: flex;
   border-radius: 50%;
