@@ -1186,6 +1186,7 @@ form .btn {
 
   .car-price span {
     color: red;
+    display: block;
   }
 
   .even-element h2 {
