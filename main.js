@@ -125,13 +125,36 @@ if (exitBtn && navMobile) {
 
   dropdownButtons.forEach(function (btn) {
     btn.addEventListener("click", function (event) {
-      event.preventDefault(); // Stop the link from navigating
-      var dropdownContent = this.nextElementSibling; // Get the next sibling element which should be the dropdown content
-      if (dropdownContent) {
+      var dropdownContent = this.nextElementSibling; 
+      if (dropdownContent && dropdownContent.classList.contains('dropdown-content-mobile')) {
         dropdownContent.classList.toggle("active-dropdown"); // Toggle the visibility
       }
     });
   });
+
+  // Targeting links inside the dropdown content
+  document.querySelectorAll(".dropdown-content-mobile a").forEach(function(link) {
+    link.addEventListener("click", function(event) {
+      // event.preventDefault(); // Prevent the default anchor behavior
+      const targetId = this.getAttribute("href"); // Get the target element id
+      const targetElement = document.querySelector(targetId);
+
+      // Hide the mobile navigation menu
+      var navMobile = document.getElementsByClassName("nav__content-mobile")[0];
+      if (navMobile) {
+        navMobile.classList.remove("open");
+      }
+
+      // Navigate to the target element
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.getBoundingClientRect().top + window.pageYOffset - (document.querySelector("header").offsetHeight || 0),
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
   setTimeout(openModal, 2000);
 }
 
@@ -181,3 +204,4 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     }
   });
 });
+

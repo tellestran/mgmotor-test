@@ -155,6 +155,9 @@ nav {
   align-items: center;
 }
 
+.btn-to-form {
+  text-decoration: none;
+}
 .nav__content a {
   text-decoration: none;
   color: var(--white);
@@ -1124,6 +1127,14 @@ form .btn {
     width: 100%;
   }
 
+  .nav a {
+    display: inline-block;
+  }
+
+  .nav a img {
+    height: 100%;
+  }
+
   .nav button {
     padding: 1rem;
     margin: 0;
@@ -1165,6 +1176,7 @@ form .btn {
 
   .price__mobile-element {
     border-bottom: 5px solid var(--red);
+    padding: 0 1rem;
   }
 
   .price__mobile-element img {
@@ -1332,6 +1344,22 @@ form .btn {
     right: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .nav .nav__logo img {
+    transform: scale(1.5);
+    margin-left: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav .nav__logo img {
+    transform: scale(2);
+    margin-left: 3rem;
+  }
+
+  .subnav__branch-title {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -1366,13 +1394,18 @@ form .btn {
   .qualification h3 {
     font-size: 1.5rem;
   }
+  .nav .nav__logo img {
+    transform: scale(2);
+    margin-left: 3rem;
+  }
 }
 
 @media only screen and (max-width: 400px) {
-  .nav__logo img {
-    transform: scale(1.5);
-    margin-left: 1rem;
+  .nav .nav__logo img {
+    transform: scale(3.5);
+    margin-left: 5rem;
   }
+
   .nav__mobile a {
     display: none;
   }
@@ -1388,4 +1421,9 @@ form .btn {
     margin: 5% 5%;
     font-size: 0;
   }
+
+  .qualification h3 {
+    font-size: 1.3rem;
+  }
 }
+
