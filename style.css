@@ -1472,11 +1472,11 @@ form .btn {
   }
 
   #accordion h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   form h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -1490,7 +1490,7 @@ form .btn {
   border-radius: 50%;
   background-color: var(--white);
   cursor: pointer;
-  border: none;
+  border: 2px solid var(--red);
 }
 
 #scroll-to-top-btn div {

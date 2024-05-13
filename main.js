@@ -87,4 +87,39 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     );
   }
+
+  document.querySelectorAll(".dropdown-content-mobile a").forEach((link) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent the default anchor behavior
+
+      // Extract the ID from the href attribute
+      const targetId = this.getAttribute("href").substring(1); // Remove the # character
+      const targetElement = document.getElementById(targetId);
+
+      // Hide the mobile navigation menu
+      const navMobile = document.querySelector(".nav__content-mobile");
+      if (navMobile) {
+        navMobile.classList.remove("open");
+      }
+
+      // Check if the target element exists
+      if (targetElement) {
+        // Calculate the position to scroll to, accounting for fixed headers or other offsets
+        const headerOffset = document.querySelector("header")
+          ? document.querySelector("header").offsetHeight
+          : 0;
+        const elementPosition =
+          targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - headerOffset;
+
+        // Navigate to the target element
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      } else {
+        console.error("Target element not found for ID:", targetId);
+      }
+    });
+  });
 });
