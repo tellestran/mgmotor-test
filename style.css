@@ -11,6 +11,7 @@
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -219,7 +220,7 @@ button span {
   display: grid;
   grid-template-columns: 3fr 7fr;
   height: 100vh;
-  padding-top: 15vh;
+  /* padding-top: 15vh; */
 }
 
 .jumbotron__nav {
@@ -418,6 +419,10 @@ a.jumbotron__nav-link .btn span {
   max-width: 50%;
 }
 
+.price__element-param a.btn-to-form {
+  background-image: none;
+}
+
 .price__element-param h2 {
   display: block;
   margin: 0 0 0 8rem;
@@ -555,6 +560,7 @@ tr:nth-child(even) {
   font-family: var(--bai);
   margin: 0;
   color: var(--white);
+  text-align: center;
 }
 
 #news .news__title {
@@ -954,6 +960,10 @@ form .btn {
   margin-right: 0.5rem;
 }
 
+.jumbotron__mobile {
+  display: none;
+}
+
 @keyframes fade {
   from {
     opacity: 0.4;
@@ -1011,6 +1021,91 @@ form .btn {
 }
 
 @media only screen and (max-width: 920px) {
+  #nav__mobile {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    z-index: 10;
+    background-color: var(--red);
+    color: #fff;
+    top: 0;
+    width: 100%;
+    padding: 10% 0 50% 10%;
+    justify-content: space-between;
+    left: -100%; /* Start offscreen */
+    transition: left 0.3s ease-in-out;
+  }
+
+  #nav__mobile.open {
+    left: 0; /* Move to screen */
+  }
+
+  #nav__mobile.close {
+    left: -100%; /* Move to screen */
+  }
+
+  button#exit-btn {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5% 5% 0 0;
+    z-index: 4;
+    font-size: 5rem;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+  }
+
+  button#exit-btn i {
+    background-color: #fff;
+    border: none;
+    padding: 0.5rem 0.5rem;
+  }
+
+  .nav__content-mobile a {
+    display: inline-block;
+    color: #eee;
+    font-size: 2.8rem;
+    font-weight: 600;
+    font-family: "Bai Jamjuree", sans-serif;
+    padding: 1.5rem 0 0 2rem;
+    text-decoration: none;
+  }
+  .nav__content-mobile {
+    overflow-y: auto; /* Cho phép cuộn dọc */
+    max-height: 100vh; /* Giới hạn chiều cao tối đa */
+  }
+
+  .dropdown-btn {
+    position: relative;
+  }
+
+  .dropdown-content-mobile {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+
+  .dropdown-content-mobile a {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 2rem;
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  .dropdown-content-mobile a:active {
+    text-decoration: underline;
+  }
+
+  /* CSS để hiển thị dropdown khi active */
+  .active-dropdown {
+    max-height: 500px; /* Giá trị này có thể thay đổi tùy vào nội dung */
+  }
   .jumbotron {
     padding: 0;
   }
@@ -1074,6 +1169,30 @@ form .btn {
     margin: 1rem 0 0rem 5rem;
   }
 
+  .car-name {
+    color: white;
+    font-size: 2rem;
+    font-family: var(--bai);
+    text-align: center;
+    margin: 0;
+  }
+
+  .car-price {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-family: var(--bai);
+    margin: 1rem 0;
+  }
+
+  .car-price span {
+    color: red;
+  }
+
+  .even-element h2 {
+    color: black;
+  }
+
   table {
     color: white;
     font-family: var(--bai);
@@ -1094,13 +1213,22 @@ form .btn {
   .even-element table td {
     color: var(--black);
   }
+
+  .even-element button {
+    background-color: var(--black);
+    color: var(--white);
+  }
   .mghs {
     width: 100%;
   }
 
+  .mgrx5 {
+  }
+
   .mgrx5 img {
     max-width: 100%;
-    transform: scale(0.8);
+    transform: scale(1);
+    margin: 0;
   }
 
   .mghs img {
@@ -1120,5 +1248,107 @@ form .btn {
 
   .mgzs img {
     margin: 0;
+  }
+  .qualification {
+    padding: 3rem 3rem;
+  }
+
+  .validate {
+    flex-direction: column;
+  }
+
+  #accordion {
+    width: 100%;
+  }
+  form {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .showroom-list__list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .footer__logo {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 3rem;
+  }
+
+  .jumbotron {
+    display: none;
+  }
+
+  .jumbotron__mobile {
+    display: block;
+    position: relative;
+  }
+
+  .jumbotron__mobile video {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .jumbotron__mobile h2 {
+    position: absolute;
+    z-index: 20;
+    color: white;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .car-price {
+    font-size: 1.8rem;
+  }
+  .price____mobile-element-img {
+    padding-left: 0rem;
+  }
+
+  .mghs .price____mobile-element-img {
+    padding-left: 2rem;
+  }
+  .mghs img {
+    margin: 3rem 0;
+  }
+
+  .mgnewmg5 div {
+    padding: 0;
+  }
+
+  .mgnewmg5 div img {
+    transform: scale(0.9);
+  }
+
+  .qualification {
+    flex-direction: column;
+  }
+  .qualification h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .nav__content-mobile a {
+    font-size: 2rem;
+  }
+  button#exit-btn i {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  button#exit-btn {
+    margin: 5% 5%;
+    font-size: 0;
   }
 }

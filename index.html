@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chào mừng đến với MG Motor Long Biên</title>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.2/css/all.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon-16x16.png">
+    <link rel="manifest" href="./assets/site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -47,12 +51,13 @@
                 <a href="#">Trang chủ</a>
                 <a href="#">Giới thiệu</a>
                 <a href="#" class="nav__products-btn">Sản phẩm</a>
-                <a href="#"><button class="btn nav__btn"><span>Đăng ký lái thử</span></button></a>
+                <a href="#contact-form"><button class="btn nav__btn"><span>Đăng ký lái thử</span></button></a>
             </div>
             <div class="nav__mobile">
-                <a href=""><i class="fa-duotone fa-steering-wheel"></i>Lái thử</a>
-                <a href=""><i class="fa-solid fa-phone"></i>0934 343 141</a>
-                <button><i class="fa-solid fa-bars"></i></button>
+                <a>
+                    MG Long Biên
+                </a>
+                <button id="menu-btn"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
         <div class="nav__product">
@@ -78,16 +83,32 @@
             </a>
         </div>
     </nav>
+    <div class="nav__content-mobile" id="nav__mobile">
+        <div class="dropdown-btn"><a class="nav__content-element dropbtn-mobile" href="#">Trang Chủ</a></div>
+        <div class="dropdown-btn"><a class="nav__content-element dropbtn-mobile" href="#">Giới thiệu</a></div>
+        <div class="dropdown-btn">
+            <a class="nav__content-element dropbtn-mobile" href="#">Sản Phẩm</a>
+            <div class="dropdown-content-mobile">
+                <a href="#">MG RX5</a>
+                <a href="#">MG New MG5</a>
+                <a href="#">MG HS</a>
+                <a href="#">MG ZS</a>
+                <a href="#">MG 5</a>
+            </div>
+        </div>
+        <button id="exit-btn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
     <section class="jumbotron">
         <div class="jumbotron__nav">
             <h2 class="jumbotron__title">Driven by Passion</h2>
             <div class="jumbotron__nav-content">
-                <a class="jumbotron__nav-link" href=""><button class="btn"><span>MG HS</span></button></a>
-                <a class="jumbotron__nav-link" href=""><button class="btn"><span>MG RX 5</span></button></a>
-                <a class="jumbotron__nav-link" href=""><button class="btn"><span>MG 5</span></button></a>
-                <a class="jumbotron__nav-link" href=""><button class="btn"><span>New MG 5</span></button></a>
-                <a class="jumbotron__nav-link" href=""><button class="btn"><span>MG ZS</span></button></a>
-                <a class="jumbotron__nav-link" href=""><button class="btn"><span>Đăng ký lái thử</span></button></a>
+                <a class="jumbotron__nav-link" href="#mghs"><button class="btn"><span>MG HS</span></button></a>
+                <a class="jumbotron__nav-link" href="#mgrx5"><button class="btn"><span>MG RX 5</span></button></a>
+                <a class="jumbotron__nav-link" href="#mg5"><button class="btn"><span>MG 5</span></button></a>
+                <a class="jumbotron__nav-link" href="#newmg5"><button class="btn"><span>New MG 5</span></button></a>
+                <a class="jumbotron__nav-link" href="#mgzs"><button class="btn"><span>MG ZS</span></button></a>
+                <a class="jumbotron__nav-link" href="#contact-form"><button class="btn"><span>Đăng ký lái
+                            thử</span></button></a>
 
             </div>
         </div>
@@ -117,8 +138,15 @@
 
         </div>
     </section>
+    <section class="jumbotron__mobile">
+        <video muted="muted" playsinline="" autoplay="autoplay" loop="loop" class="block-banner__bg">
+            <source src="https://mgmotor.vn/wp-content/uploads/2023/09/Untitled-Trim-Trim.mp4" type="video/mp4">
+        </video>
+        <!-- <h2>MG Motor - Chuẩn mực ô tô Anh Quốc</h2> -->
+
+    </section>
     <section class="price">
-        <div class="price__element element-1">
+        <div class="price__element element-1" id="mgrx5">
             <div class="price__element-param">
                 <a href="#">
                     <h2>MG RX5</h2>
@@ -159,11 +187,11 @@
                         </tr>
                     </tbody>
                 </table>
-                <button class="btn"><span>Tìm hiểu thêm</span></button>
+                <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </div>
         </div>
-        <div class="price__element element-2">
+        <div class="price__element element-2" id="mghs">
             <div class="price__element-param">
                 <a href="#">
                     <h2>MG HS</h2>
@@ -204,11 +232,11 @@
                         </tr>
                     </tbody>
                 </table>
-                <button class="btn"><span>Tìm hiểu thêm</span></button>
+                <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </div>
         </div>
-        <div class="price__element element-3">
+        <div class="price__element element-3" id="newmg5">
             <div class="price__element-param">
                 <a href="#">
                     <h2>New MG5</h2>
@@ -249,11 +277,11 @@
                         </tr>
                     </tbody>
                 </table>
-                <button class="btn"><span>Tìm hiểu thêm</span></button>
+                <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </div>
         </div>
-        <div class="price__element element-4">
+        <div class="price__element element-4" id="mg5">
             <div class="price__element-param">
                 <a href="#">
                     <h2>MG5</h2>
@@ -294,11 +322,11 @@
                         </tr>
                     </tbody>
                 </table>
-                <button class="btn"><span>Tìm hiểu thêm</span></button>
+                <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </div>
         </div>
-        <div class="price__element element-5">
+        <div class="price__element element-5" id="mgzs">
             <div class="price__element-param">
                 <a href="#">
                     <h2>MG ZS</h2>
@@ -339,7 +367,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <button class="btn"><span>Tìm hiểu thêm</span></button>
+                <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </div>
         </div>
@@ -347,9 +375,11 @@
     <section class="price-mobile">
         <div class="price__mobile-element mgrx5">
             <div class="price____mobile-element-img">
-                <img src="./assets/mgrx5__price-mobile.png" alt="">
+                <img src="./assets/mgrx5__price.png" alt="">
             </div>
             <table>
+                <h2 class="car-name">MG RX5</h2>
+                <h2 class="car-price">Giá chỉ từ <span>599.000.000 VND</span></h2>
                 <tbody>
                     <tr>
                         <td><span>Hộp số</span></td>
@@ -383,7 +413,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn"><span>Tìm hiểu thêm</span></button>
+            <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </a>
         </div>
@@ -392,6 +422,9 @@
                 <img src="./assets/mghs__price-mobile.png" alt="">
             </div>
             <table>
+                <h2 class="car-name">MG RX5</h2>
+                <h2 class="car-price">Giá chỉ từ <span>599.000.000 VND</span></h2>
+
                 <tbody>
                     <tr>
                         <td><span>Hộp số</span></td>
@@ -425,7 +458,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn"><span>Tìm hiểu thêm</span></button>
+            <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </a>
         </div>
@@ -434,6 +467,9 @@
                 <img src="./assets/mgnewmg5__price-mobile.png" alt="">
             </div>
             <table>
+                <h2 class="car-name">MG RX5</h2>
+                <h2 class="car-price">Giá chỉ từ <span>599.000.000 VND</span></h2>
+
                 <tbody>
                     <tr>
                         <td><span>Hộp số</span></td>
@@ -467,7 +503,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn"><span>Tìm hiểu thêm</span></button>
+            <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </a>
         </div>
@@ -477,6 +513,9 @@
             </div>
             <table>
                 <tbody>
+                    <h2 class="car-name">MG RX5</h2>
+                    <h2 class="car-price">Giá chỉ từ <span>599.000.000 VND</span></h2>
+
                     <tr>
                         <td><span>Hộp số</span></td>
                         <td><span>:</span></td>
@@ -509,7 +548,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn"><span>Tìm hiểu thêm</span></button>
+            <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </a>
         </div>
@@ -518,6 +557,9 @@
                 <img src="./assets/mgzs__price-mobile.png" alt="">
             </div>
             <table>
+                <h2 class="car-name">MG RX5</h2>
+                <h2 class="car-price">Giá chỉ từ <span>599.000.000 VND</span></h2>
+
                 <tbody>
                     <tr>
                         <td><span>Hộp số</span></td>
@@ -551,7 +593,7 @@
                     </tr>
                 </tbody>
             </table>
-            <button class="btn"><span>Tìm hiểu thêm</span></button>
+            <a class="btn-to-form" href="#contact-form"><button class="btn"><span>Tìm hiểu thêm</span></button></a>
 
             </a>
         </div>
@@ -674,8 +716,6 @@
                 <p>Luôn cam kết mang lại mức giá ưu đãi nhất cho quý khách với thời gian giao xe nhanh nhất.
                 </p>
             </div>
-
-
             <button class="accordion"><span>2</span>KHUYẾN MÃI TỐT NHẤT</button>
             <div class="accordion__panel">
                 <p>Chúng tôi luôn cập nhật sớm nhất các chương trình khuyến mãi của hãng và đại lý nhằm mang đến lợi ích
@@ -712,10 +752,12 @@
     <section class="footer">
         <div class="footer__text">
             <h2>MG Long Biên</h2>
-            <a href=""><i class="fa-solid fa-map"></i>Số 3-5 Đường Nguyễn Văn Linh, Phường Gia Thụy, Quận Long Biên</a>
-            <a href=""><i class="fa-solid fa-phone"></i>0934 343 141</a>
-            <a href=""><i class="fa-regular fa-envelopes-bulk"></i>tiep.pham@mgmotor.asia</a>
-            <a href=""><i class="fa-solid fa-w"></i>longbien.mgmotor.asia</a>
+            <a href="https://maps.app.goo.gl/YCQ4WtNG85dJuV3c8"><i class="fa-solid fa-map"></i>Số 3-5 Đường Nguyễn Văn
+                Linh, Phường Gia Thụy, Quận Long Biên</a>
+            <a href="tel:0934343141"><i class="fa-solid fa-phone"></i>0934 343 141</a>
+            <a href="mailto:tiep.pham@mgmotor.asia"><i
+                    class="fa-regular fa-envelopes-bulk"></i>tiep.pham@mgmotor.asia</a>
+            <a href="longbien.mgmotor.asia"><i class="fa-solid fa-w"></i>longbien.mgmotor.asia</a>
         </div>
         <div class="footer__logo">
             <img src="https://mgmotor.vn/wp-content/themes/mg-motor/assets/img/icon/logo-header.svg" alt="">

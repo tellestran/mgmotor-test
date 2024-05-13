@@ -80,3 +80,58 @@ navProduct.addEventListener("mouseleave", function () {
     }
   }, 100); // 2000 milliseconds = 2 seconds
 });
+
+  var navMobile = document.getElementsByClassName("nav__content-mobile")[0];
+  var menuBtn = document.getElementById("menu-btn");
+  var exitBtn = document.getElementById("exit-btn");
+
+  if (menuBtn && navMobile) {
+    menuBtn.addEventListener("click", function () {
+      console.log("menu");
+      navMobile.classList.add("open");
+    });
+  }
+
+  if (exitBtn && navMobile) {
+    exitBtn.addEventListener("click", function () {
+      console.log("exit");
+      navMobile.classList.remove("open");
+    });
+
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var closePopup = document.getElementsByClassName("close")[0];
+    var modalClose = document.getElementById("modal__forward");
+
+    function openModal() {
+      modal.style.display = "block";
+    }
+
+    closePopup.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    modalClose.onclick = function () {
+      modal.style.display = "none";
+    };
+
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+
+    var dropdownButtons = document.querySelectorAll(".dropbtn-mobile");
+
+    dropdownButtons.forEach(function (btn) {
+      btn.addEventListener("click", function (event) {
+        event.preventDefault(); // Stop the link from navigating
+        var dropdownContent = this.nextElementSibling; // Get the next sibling element which should be the dropdown content
+        if (dropdownContent) {
+          dropdownContent.classList.toggle("active-dropdown"); // Toggle the visibility
+        }
+      });
+    });
+    setTimeout(openModal, 2000);
+  }
+
