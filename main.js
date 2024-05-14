@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       timeoutId = setTimeout(() => {
         if (!navProductsBtn.matches(":hover"))
           navProduct.style.display = "none";
-      }, 2000);
+      }, 100);
     });
   }
 
