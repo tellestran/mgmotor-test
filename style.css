@@ -188,6 +188,10 @@ nav {
   text-decoration: none;
 }
 
+.nav__content-mobile {
+  display: none;
+}
+
 .nav__product-element {
   display: flex;
   flex-direction: column;
@@ -230,7 +234,7 @@ button span {
   display: grid;
   grid-template-columns: 3fr 7fr;
   height: 100vh;
-  /* padding-top: 15vh; */
+  padding-top: 13vh;
 }
 
 .jumbotron__nav {
