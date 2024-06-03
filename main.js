@@ -122,4 +122,21 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  document
+    .querySelectorAll(".nav__content-mobile a, .nav__content-mobile button")
+    .forEach((element) => {
+      element.addEventListener("click", function (event) {
+        // Check if the clicked element is not the 'Sản Phẩm' button or part of its dropdown
+        if (
+          !this.closest(".dropdown-btn")
+            .querySelector(".dropbtn-mobile")
+            .textContent.includes("Sản Phẩm")
+        ) {
+          if (navMobile.classList.contains("open")) {
+            navMobile.classList.remove("open");
+          }
+        }
+      });
+    });
 });

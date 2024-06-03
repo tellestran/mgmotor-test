@@ -449,10 +449,8 @@ a.jumbotron__nav-link .btn span {
 
 .price__element-param h3 {
   display: block;
-  /* font-family: var(--inter); */
   font-size: 1.6rem;
   font-style: italic;
-  /* border-top: 3px solid var(--red); */
   max-width: 70%;
   margin: 0 0 0 8rem;
   color: black;
