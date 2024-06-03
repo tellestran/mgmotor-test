@@ -1448,7 +1448,7 @@ form .btn {
 
 @media only screen and (max-width: 400px) {
   .nav .nav__logo img {
-    transform: scale(3.5);
+    /* transform: scale(3.5); */
     margin-left: 5rem;
   }
 
