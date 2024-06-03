@@ -1451,7 +1451,7 @@ form .btn {
 
 @media only screen and (max-width: 400px) {
   .nav {
-    height: 8vh;
+    height: 10vh;
   }
 
   .nav__logo-mobile {
