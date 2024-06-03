@@ -1,5 +1,5 @@
 :root {
-  --red: #d6272b;
+  --red: #D6272B;
   --black: #000000;
   --white: #ffffff;
   --ubuntu: "Ubuntu Sans Mono", monospace;
@@ -222,6 +222,9 @@ nav {
   border: 3px solid var(--red);
 }
 
+.nav__logo-mobile {
+  display: none;
+}
 /* .nav__products-btn:hover + .nav__product {
   display: flex;
 } */
@@ -1447,9 +1450,30 @@ form .btn {
 }
 
 @media only screen and (max-width: 400px) {
+  .nav {
+    height: 8vh;
+  }
+
+  .nav__logo-mobile {
+    max-height: 80%;
+  }
+
   .nav .nav__logo img {
     transform: scale(3.5);
     margin-left: 5rem;
+    max-height: 100%;
+  }
+
+  /* .nav__logo {
+    display: none;
+  } */
+
+  .nav__logo-mobile {
+    display: block;
+    height: 100%;
+  }
+
+  .nav__logo-mobile img {
     max-height: 100%;
   }
 
