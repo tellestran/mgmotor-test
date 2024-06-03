@@ -1,5 +1,5 @@
 :root {
-  --red: #D6272B;
+  --red: #d7000a;
   --black: #000000;
   --white: #ffffff;
   --ubuntu: "Ubuntu Sans Mono", monospace;
@@ -1456,6 +1456,7 @@ form .btn {
 
   .nav__logo-mobile {
     max-height: 80%;
+    margin-left: 1rem;
   }
 
   .nav .nav__logo img {
@@ -1464,9 +1465,9 @@ form .btn {
     max-height: 100%;
   }
 
-  /* .nav__logo {
+  .nav__logo {
     display: none;
-  } */
+  }
 
   .nav__logo-mobile {
     display: block;
