@@ -21,6 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
     slides[slideIndex - 1].style.display = "block";
   }
 
+  // Add event listeners for navigating the slideshow
+  document
+    .querySelector(".prev")
+    .addEventListener("click", () => plusSlides(-1));
+  document
+    .querySelector(".next")
+    .addEventListener("click", () => plusSlides(1));
+
   // Handle accordion panels
   document
     .querySelectorAll(".accordion, .faqs, .dropbtn-mobile")
@@ -68,7 +76,9 @@ document.addEventListener("DOMContentLoaded", () => {
     menuBtn.addEventListener("click", () => navMobile.classList.add("open"));
   }
   if (exitBtn && navMobile) {
-    exitBtn.addEventListener("click", () => navMobile.classList.remove("open"));
+    exitBtn.addEventListener("click", function () {
+      navMobile.classList.remove("open");
+    });
   }
 
   // Scroll to top button handling
